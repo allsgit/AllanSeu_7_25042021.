@@ -1,0 +1,158 @@
+.main-container{
+width: 1440px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 0 auto;
+}
+
+.search-bar-main{
+    width: 1240px;
+    height: 69px;
+    background-color: #E7E7E7;
+    border: none;
+    border-radius: 5px; 
+}
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+        .brand-name{
+            margin: 0 auto;
+            margin-bottom:  17px;
+            color: #D04F4F;
+            
+    }
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 42px auto 0;
+    img{
+        width: 50px;
+        height: 48px;
+    }
+}
+
+.search-by-ingredient{
+    background-color: #3282F7;
+    width: 170px;
+    height: 69px;
+    border-radius: 5px;
+    margin: 15px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+.search-by-appareil{
+    background-color: #68D9A4;
+    width: 170px;
+    height: 69px;
+    border-radius: 5px;
+    margin: 15px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+
+}
+.search-by-ustensil{
+    background-color: #ED6454;
+    width: 170px;
+    height: 69px;
+    border-radius: 5px;
+    margin: 15px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+
+}
+
+.search-div{
+    display: flex;
+    margin-bottom: 25px;
+    
+}
+
+.tag-add{
+    width: 107px;
+    height: 37px;
+    background-color: #3282F7;
+    border-radius: 5px;
+    margin-top: 35px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    width: 1344px;
+    height: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    
+}
+.recette{
+    width: 380px;
+    height: 368px;
+    background-color: #E7E7E7;
+    margin: 25px;
+        .recette-img{
+            width: 100%;
+            background-color:#C7BEBE;
+            height: 178px;
+    }
+    .recette-description{
+        display: grid;
+        grid-template-columns: 186px 186px;
+        grid-template-rows: 54px 136px;
+            .recette-title{
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            .ingredient-list{
+                ul{    display: flex;
+                    flex-direction: column;
+                    padding-right: 10px;
+                    grid-column-start: 1;
+                    grid-column-end: 1;
+                    font-size: 12px;}
+                    text-decoration: none;
+                    list-style-type: none;
+                    padding: 0;
+
+            }
+            .process{
+                font-size: 12px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 2;
+
+            }
+            .time-to{
+                display: flex;
+                align-items: center;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                font-size: 18px;
+                font-weight: bold;
+                margin-left: 10px;
+                margin-left: 87px;
+                margin-top: 22px;
+                    img{
+                        margin-right: 5px;
+                    }
+
+            }
+    }
+}
+
+
+
