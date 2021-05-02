@@ -1,99 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
 
-    <body>
-        <div class="main-container">
-            <header>
-                <div class="logo">
-                    <img src="/images/logo.png" alt="">
-                </div>
-                <h1 class="brand-name">Les petits plats</h1>
-            
-                <input type="text" class="search-bar-main"></input>
-                <div class="tag-add">tags</div>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="logo">
+                <img src="/images/logo.png" alt="">
+            </div>
+            <h1 class="brand-name">Les petits plats</h1>
+
+            <input type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                class="search-bar-main"></input>
+            <div class="tag-add">
+                <p>tags</p>
+                <img src="/images/delete-item.png" alt="delete filter item">
+            </div>
             <div class="search-div">
-                <div class="search-by-ingredient">ingrédients</div>
-                <div class="search-by-appareil">appareil</div>
-                <div class="search-by-ustensil">ustensil</div>
+                <div class="search-by-ingredient">
+                    <p class="ingredient">ingrédients</p>
+                    <img class="arrow" src="/images/arrow.png" alt="drop-down menu arrow">
+                </div>
+                <div class="search-by-appareil">
+                    <p class="ingredient">Appareil</p>
+                    <img class="arrow" src="/images/arrow.png" alt="drop-down menu arrow">
+                </div>
+                <div class="search-by-ustensil">
+                    <p class="ingredient">Ustensiles</p>
+                    <img class="arrow" src="/images/arrow.png" alt="drop-down menu arrow">
+                </div>
             </div>
 
-            </header>
-            <main>
-                <section class="recette">
-                    <div class="recette-img">
-
-                    </div>
-                    <div class="recette-description">
-                        <h2 class="recette-title">Limonade de coco</h2>
-                            <ul class="ingredient-list">
-                                <li>Jus de citron: 2</li>
-                                <li>Créme de coco: 4 cuillères</li>
-                                <li>Sucre: 20g</li>
-                                <li>Glaçons: 2</li>
-                            </ul>
-                            
-                            
-                            
-                            
-                            </p>
-                        <p class="process">Mettre les glaçons à 
-                            votre goût dans le blender, ajouter le lait, 
-                            la crème de coco, le jus de 2 citrons et le sucre. 
-                            Mixer jusqu'à avoir la consistence désirée</p>
-                        <p class="time-to"><img src="/images/timer.png" alt="" class="timer">10min</p>
-                    </div>
-                </section>
-                <section class="recette">
-                    <div class="recette-img">
-                        
-                    </div>
-                    <div class="recette-description">
-
-                    </div>
-                </section>
-                <section class="recette">
-                    <div class="recette-img">
-                        
-                    </div>
-                    <div class="recette-description">
-
-                    </div>
-                </section>
-                <section class="recette">
-                    <div class="recette-img">
-                        
-                    </div>
-                    <div class="recette-description">
-
-                    </div>
-                </section>
-                <section class="recette">
-                    <div class="recette-img">
-                        
-                    </div>
-                    <div class="recette-description">
-
-                    </div>
-                </section>
-                <section class="recette">
-                    <div class="recette-img">
-                        
-                    </div>
-                    <div class="recette-description">
-
-                    </div>
-                </section>
-            </div>
-        </div>
-
-    </body>
+        </header>
+        <main></main>
+        <script src="js/app.js"></script>
+</body>
 
 </html>
