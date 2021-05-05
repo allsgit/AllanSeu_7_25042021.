@@ -76,6 +76,7 @@ header .brand-name {
 }
 
 .search-by-ingredient {
+  position: absolute;
   background-color: #3282F7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,14 +92,23 @@ header .brand-name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .search-by-ingredient .ingredient {
   margin: 0 0 0 20px;
+  position: absolute;
+  margin: 0 20px 0 0;
+  right: 47px;
+  top: 25px;
 }
 
 .search-by-ingredient img {
+  position: absolute;
   margin: 0 20px 0 0;
+  right: 0;
+  top: 30px;
 }
 
 .search-by-appareil {
@@ -286,10 +296,12 @@ main {
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 2;
-  margin: 0 0 22px 0;
+  margin: 0 0 26px 0;
   padding-right: 25px;
-  white-space: normal;
-  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
   overflow: hidden;
 }
 
