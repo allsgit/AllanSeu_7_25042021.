@@ -73,11 +73,11 @@ function filterBy(recipes) {
 		const userInputToLower = userInput.value.toLowerCase();
 
 		// FILTER BY NAME //
-		const recipesName = recettes.some((recette) =>
+		const recipesName = recettes.filter((recette) =>
 			recette.name.toLowerCase().includes(userInputToLower)
 		);
 		// FILTER BY APPAREIL //
-		const recipesAppliance = recettes.some((recette) =>
+		const recipesAppliance = recettes.filter((recette) =>
 			recette.appliance.toLowerCase().includes(userInputToLower)
 		);
 		// FILTER BY DESCRIPTION //
