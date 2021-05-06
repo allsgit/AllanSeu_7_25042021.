@@ -9,7 +9,7 @@ fetch('/js/recipes-list.json')
     displaySortBy (data.recipes)
 	});
 function recipesCardCreator(recipes) {
-	recipes.map((element => {
+	recipes.map((recipeItem => {
 		const recipesCard = document.createElement('section');
 		const recipesDescription = document.createElement('div');
 		const recipesImg = document.createElement('div');
@@ -37,9 +37,9 @@ function recipesCardCreator(recipes) {
 		recipesDescription.appendChild(recipesProcess);
 		recipesDescription.appendChild(recipesTime);
 		recipesDescription.appendChild(timerIcon);
-
-		element.ingredients.map((element => {
-      console.log(element);
+		console.log(recipeItem);
+		console.log(recipeItem.ingredients);
+		recipeItem.ingredients.map((element => {
 			const ingredientType = document.createElement('li');
 			const ingredientQuantity = document.createElement('p');
 
@@ -59,9 +59,9 @@ function recipesCardCreator(recipes) {
 			}
 		}));
 
-		recipesTitlte.innerText = `${element.name}`;
-		recipesProcess.innerText = `${element.description}`;
-		recipesTime.innerText = `${element.time}min`;
+		recipesTitlte.innerText = `${recipeItem.name}`;
+		recipesProcess.innerText = `${recipeItem.description}`;
+		recipesTime.innerText = `${recipeItem.time}min`;
 		timerIcon.src = '/images/timer.png';
 	}));
 }
@@ -73,11 +73,11 @@ function filterBy(recipes) {
 		const userInputToLower = userInput.value.toLowerCase();
 
 		// FILTER BY NAME //
-		const recipesName = recettes.filter((recette) =>
+		const recipesName = recettes.some((recette) =>
 			recette.name.toLowerCase().includes(userInputToLower)
 		);
 		// FILTER BY APPAREIL //
-		const recipesAppliance = recettes.filter((recette) =>
+		const recipesAppliance = recettes.some((recette) =>
 			recette.appliance.toLowerCase().includes(userInputToLower)
 		);
 		// FILTER BY DESCRIPTION //
@@ -100,9 +100,9 @@ function filterBy(recipes) {
 		if (recipesName) {
 			recipesCardCreator(recipesName);
 		}
-		else if (recipesAppliance) {
+		if (recipesAppliance) {
 			recipesCardCreator(recipesAppliance);
-		}
+		} 
 		if (recipesDescription) {
 			recipesCardCreator(recipesDescription);
 		}
