@@ -76,24 +76,92 @@ header .brand-name {
 }
 
 .search-by-ingredient {
-  position: absolute;
+  position: relative;
   background-color: #3282F7;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  margin: 15px 40px 0 0;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-by-ingredient .ingredient-list-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 170px;
-  height: 69px;
-  border-radius: 5px;
-  margin: 15px 20px 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 655px;
+  background-color: red;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 667px;
+  margin: 0;
+}
+
+.search-by-ingredient .ingredient-list {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 40px;
+  margin-left: 0;
+}
+
+.search-by-ingredient .advanced-input-search-ingredient {
+  width: 100%;
+  height: 100%;
+  background-color: #3282F7;
   color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-by-ingredient input {
+  color: white;
+}
+
+.search-by-ingredient ::-webkit-input-placeholder {
+  color: white;
+}
+
+.search-by-ingredient :-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-ingredient ::-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-ingredient ::placeholder {
+  color: white;
+}
+
+.search-by-ingredient .searchin-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .search-by-ingredient .ingredient {
@@ -111,7 +179,17 @@ header .brand-name {
   top: 30px;
 }
 
+.search-by-ingredient p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .search-by-appareil {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,15 +207,46 @@ header .brand-name {
           align-items: center;
 }
 
+.search-by-appareil .advanced-input-search-appareils {
+  width: 100%;
+  height: 100%;
+  background-color: #68d9a4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-by-appareil input {
+  color: white;
+}
+
+.search-by-appareil ::-webkit-input-placeholder {
+  color: white;
+}
+
+.search-by-appareil :-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-appareil ::-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-appareil ::placeholder {
+  color: white;
+}
+
 .search-by-appareil .ingredient {
   margin: 0 0 0 20px;
 }
 
 .search-by-appareil img {
-  margin: 0 20px 0 0;
+  position: absolute;
+  right: 17px;
 }
 
 .search-by-ustensil {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,12 +268,42 @@ header .brand-name {
           align-items: center;
 }
 
+.search-by-ustensil .advanced-input-search-ustensils {
+  width: 100%;
+  height: 100%;
+  background-color: #ed6454;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-by-ustensil input {
+  color: white;
+}
+
+.search-by-ustensil ::-webkit-input-placeholder {
+  color: white;
+}
+
+.search-by-ustensil :-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-ustensil ::-ms-input-placeholder {
+  color: white;
+}
+
+.search-by-ustensil ::placeholder {
+  color: white;
+}
+
 .search-by-ustensil .ingredient {
   margin: 0 20px;
 }
 
 .search-by-ustensil img {
-  margin: 0 20px 0 0;
+  position: absolute;
+  right: 17px;
 }
 
 .search-div {
@@ -212,7 +351,7 @@ main {
           justify-content: center;
   width: 1344px;
   height: 100%;
-  margin: 0 auto;
+  margin: 0px auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
