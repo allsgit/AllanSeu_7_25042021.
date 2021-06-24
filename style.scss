@@ -65,7 +65,7 @@ header{
     align-items: center;
 
     .ingredient-list-div {
-        display: flex;
+        display: none;
         justify-content: space-between;
         flex-direction: column;
         width: 655px;
@@ -73,6 +73,7 @@ header{
         flex-wrap: wrap;
         height: 667px;
         margin: 0;
+
     }
 
     .ingredient-list {
