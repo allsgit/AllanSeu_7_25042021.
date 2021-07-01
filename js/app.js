@@ -334,7 +334,7 @@ function tagAdd () {
   searchTagUstensil.forEach(tag => {
     tag.addEventListener("click", (e) => {
       if (tagFilter.includes(e.target.textContent)){
-        console.log("nope");
+        console.log("tag déjà ajouté");
       } else {
       tagDiv = document.createElement("div")
       tagDiv.classList = "tagDiv"
