@@ -99,6 +99,9 @@ header .brand-name {
   height: auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .search-by-ingredient .ingredient-list {
@@ -153,11 +156,13 @@ header .brand-name {
   top: 25px;
 }
 
-.search-by-ingredient img {
+.search-by-ingredient .arrow {
   position: absolute;
   margin: 0 20px 0 0;
   right: 0;
   top: 30px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .search-by-ingredient p {
@@ -187,6 +192,7 @@ header .brand-name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .search-by-appareil .appareil-list-div {
@@ -202,6 +208,8 @@ header .brand-name {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .search-by-appareil .appareil-list-div li {
@@ -273,13 +281,10 @@ header .brand-name {
 
 .search-by-ustensil .ustensil-list-div {
   position: absolute;
+  margin: 10px;
   left: 0px;
   top: 70px;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 655px;
   background-color: red;
   -ms-flex-wrap: wrap;
@@ -291,6 +296,7 @@ header .brand-name {
 .search-by-ustensil .ustensil-list-div li {
   text-decoration: none;
   list-style-type: none;
+  margin: 10px;
 }
 
 .search-by-ustensil .advanced-input-search-ustensils {
@@ -353,9 +359,8 @@ header .brand-name {
 }
 
 .tag-add .tagDiv {
-  width: 100px;
-  height: 50px;
-  background-color: red;
+  width: 107;
+  height: 37px;
   margin-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,12 +368,27 @@ header .brand-name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 5px;
   font-size: 14px;
   color: white;
+}
+
+.tag-add .tagDiv:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.9;
+}
+
+.tag-add .tagDiv img {
+  width: 20px;
+  height: 20px;
+}
+
+.tag-add .tagDiv .item-tag {
+  margin: 5px;
 }
 
 .tag-add p {
@@ -379,7 +399,7 @@ header .brand-name {
 }
 
 .tag-add img {
-  margin: 0px 22px 0 0;
+  margin: 0px 7px 0 0;
 }
 
 main {
