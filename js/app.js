@@ -160,6 +160,35 @@ function titleAndDescriptionContain(recipe, keyword) {
         AdvancSearchIngredients(recipes, ingredient)
     );
 }
+/**
+ * FONCTION DE RECHERCHE AVANCÉ PAR TAG INGREDIENT/APPAREIL/USTENSIL
+ */
+
+ function AdvancSearchIngredients(recipe, tag) {
+    const recipeMap = recipe.ingredients.map(element => element.ingredient.toLowerCase());
+    return tag.every(element => recipeMap.includes(element))
+}
+
+function AdvancSearchUstensils(recipe, tag) {
+    const recipeMap = recipe.ustensils.map(element => element.toLowerCase());
+  console.log(recipeMap);
+    return tag.every(element => (recipeMap.includes(element.toLowerCase())))
+}
+
+function AdvancSearchAppareils(recipe, tag) {
+    return tag.length == 0 || (tag.length == 1 && tag[0] == recipe.appliance); // bloquer fonction ajout + de 1 tag appliance //
+}
+
+function searchRecipesWithTag(recipes, userInputToLower, tagUstensils, tagAppareils) {
+    const mainFilter = recipes.filter(recipe => filterBySearch(recipe, userInputToLower));
+    const recipesIngredient = mainFilter.filter(element => AdvancSearchIngredients(element, tagIngredients))
+    const recipesUstensils = recipesIngredient.filter(element => AdvancSearchUstensils(element, tagUstensils))
+    const recipesAppareils = recipesUstensils.filter(element => AdvancSearchAppareils(element, tagAppareils))
+     const recipiesToDisplay = recipes.filter(element => recipesIngredient.includes(element) &&
+        recipesUstensils.includes(element) && recipesAppareils.includes(element) );
+    return recipiesToDisplay
+}
+
 
 /**
  * FONCTION DE RECHERCHE INGREDIENT DANS LISTE INGREDIENT/USTENSILS/APAREIL
@@ -275,7 +304,7 @@ function ingredientListCreator(recipes) {
     
 
         if (ingredientItem.ingredients) {
-            ingredientToItem.innerText = ingredientItem.ingredients;
+            /* ingredientToItem.innerText = ingredientItem.ingredients; */
         } //
     });
 }
@@ -306,32 +335,6 @@ function ustensilListCreator(recipes) {
     });
 }
 
-/**
- * FONCTION DE RECHERCHE AVANCÉ PAR TAG INGREDIENT/APPAREIL/USTENSIL
- */
-
-function AdvancSearchIngredients(recipe, tag) {
-    const recipeMap = recipe.ingredients.map(element => element.ingredient.toLowerCase());
-    return tag.every(element => recipeMap.includes(element))
-}
-
-function AdvancSearchUstensils(recipe, tag) {
-    return tag.every(element => recipe.ustensils.includes(element))
-}
-
-function AdvancSearchAppareils(recipe, tag) {
-    return tag.length == 0 || (tag.length == 1 && tag[0] == recipe.appliance); // bloquer fonction ajout + de 1 tag appliance //
-}
-
-function searchRecipesWithTag(recipes, userInputToLower, tagIngredients, tagUstensils, tagAppareils) {
-    const mainFilter = recipes.filter(recipe => filterBySearch(recipe, userInputToLower));
-    const recipesIngredient = mainFilter.filter(element => AdvancSearchIngredients(element, tagIngredients))
-    const recipesUstensils = recipesIngredient.filter(element => AdvancSearchUstensils(element, tagUstensils))
-   /*  const recipesAppareils = recipesUstensils.filter(element => AdvancSearchAppareils(element, tagAppareils)) */
-    const recipiesToDisplay = recipes.filter(element => recipesIngredient.includes(element) &&
-        recipesUstensils.includes(element) && mainFilter.includes(element)/* recipesAppareils.includes(element) */);
-    return recipiesToDisplay
-}
 
 /**
  * FONCTION AJOUT DE TAG
@@ -369,8 +372,9 @@ function tagAdd(recipes) {
                  
                 } else if (e.target.className === 'ustensil-li') {
                     tagDiv.style.background = '#ed6454';
-                    tagUstensils.push(e.target.textContent);
+                    tagUstensils.push(e.target.textContent.toLowerCase());
                     tagLine.appendChild(tagDiv);
+                    console.log(tagUstensils);
              
                 } else if (e.target.className === 'ingredient-list') {
                     tagDiv.style.background = '#3282F7';
