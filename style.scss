@@ -77,7 +77,7 @@ header {
     .ingredient-list {
         font-size: 18px;
         display: inline-block;
-        margin-right: 50px;
+        width: 191px;
         margin-left: 0;
     }
 
@@ -148,6 +148,7 @@ header {
         flex-wrap: wrap;
         margin: 0;
         transition: 0.5s;
+        width: 190px;
 
         li {
             text-decoration: none;
@@ -213,6 +214,7 @@ header {
             text-decoration: none;
             list-style-type: none;
             margin: 10px;
+            width :138px
         }
     }
 
