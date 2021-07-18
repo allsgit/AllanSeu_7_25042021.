@@ -195,6 +195,15 @@ header .brand-name {
   cursor: pointer;
 }
 
+.search-by-appareil .arrow {
+  position: absolute;
+  margin: 0 20px 0 0;
+  right: 0;
+  top: 30px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 .search-by-appareil .appareil-list-div {
   display: none;
   position: absolute;
@@ -278,6 +287,15 @@ header .brand-name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.search-by-ustensil .arrow {
+  position: absolute;
+  margin: 0 20px 0 0;
+  right: 0;
+  top: 30px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .search-by-ustensil .ustensil-list-div {

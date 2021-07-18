@@ -137,6 +137,13 @@ header {
     color: white;
     align-items: center;
     cursor: pointer;
+    .arrow {
+        position: absolute;
+        margin: 0 20px 0 0;
+        right: 0;
+        top: 30px;
+        transition: 0.2s;
+    }
 
     .appareil-list-div {
         display: none;
@@ -197,6 +204,13 @@ header {
     justify-content: center;
     color: white;
     align-items: center;
+    .arrow {
+        position: absolute;
+        margin: 0 20px 0 0;
+        right: 0;
+        top: 30px;
+        transition: 0.2s;
+    }
 
     .ustensil-list-div {
         position: absolute;
