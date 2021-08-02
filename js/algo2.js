@@ -5,12 +5,12 @@ fetch("/js/recipes-list.json")
     appareilListCreator(data.recipes);
     ingredientListCreator(data.recipes);
     ustensilListCreator(data.recipes);
-    MainFilter(data.recipes);
     filterByIngredient(data.recipes);
     filterByAppareil(data.recipes);
     filterByUstensils(data.recipes);
     tagAdd(data.recipes);
     openMenu();
+    MainAlgoTwo(data.recipes)
   });
 
 /// CONSTANTES GLOBALES ///
@@ -135,41 +135,80 @@ function ustensilListCreator(recipes) {
 }
 
 //**************MAIN SEARCH **************//
-function MainFilter(recipes) {
-  // ** element de recherche **//
-  const recettes = recipes;
 
-  userInput.addEventListener("keyup", () => {
-    const userInputToLower = userInput.value.toLowerCase();
-    if (userInputToLower.length >= 3) {
-      mainContent.innerHTML = " ";
-    }
-    const result = recettes.filter((recipe) =>
-      filterBySearch(recipe, userInputToLower)
-    );
 
-    if (result.length == 0) {
+
+function MainAlgoTwo (recipes) {
+  userInput.addEventListener ('keyup', () => {
+    const resultName = [];
+    const resultDescript = [];
+    const resultIngredients = [];
+    const resultRecipes = [];
+    const userInputToLower = userInput.value.toLowerCase ();
+
+    if (userInputToLower.length < 1) {
+      recipesCardCreator (recipes);
+    } 
+    if (userInputToLower === 'vide') { // VIDE à remplacer par le resultat de recherche ’ = 0
       mainContent.innerText =
-        "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
-    } else {
-      mainContent.innerText = " ";
-
+        'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.';
+    } else if (userInputToLower.length > 1) {
+      for (let i = 0; i < recipes.length; i++) {
+        for (let j = 0; j < recipes[i].ingredients.length; j++) {
+          if (
+            recipes[i].ingredients[j].ingredient
+              .toLowerCase ()
+              .includes (userInputToLower)
+          ) {
+            resultRecipes.push(recipes[i])
+          }
+          if (recipes[i].name.toLowerCase ().includes (userInputToLower)) {
+            resultRecipes.push(recipes[i])
+          }
+          if (
+            recipes[i].description.toLowerCase ().includes (userInputToLower)
+          ) {
+            resultRecipes.push(recipes[i])
+          }
+        }
+      }
+      mainContent.innerText = ' ';
+      const setResultRecipes = new Set (resultRecipes);
+      console.log(new Set (resultRecipes));
+      
       recipesCardCreator(
         searchRecipesWithTag(
-          recipes,
+          [...setResultRecipes],
           userInputToLower,
           tagIngredients,
           tagUstensils,
           tagAppareils
         )
       );
-      filterByIngredient(result);
-      filterByAppareil(result);
-      filterByUstensils(result);
+      filterByIngredient([...setResultRecipes]);
+      filterByAppareil([...setResultRecipes]);
+      filterByUstensils([...setResultRecipes]);
       tagAdd(recipes);
     }
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function filterBySearch(recipe, keyword) {
   return (
     titleContain(recipe, keyword) ||
