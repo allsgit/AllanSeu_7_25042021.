@@ -18,8 +18,7 @@ input {
     color: rgba(0, 0, 0, 0.25);
     font-size: 18px;
 }
-.main-research{
-    position: relative;
+
 .search-bar-main {
     width: 1240px;
     height: 69px;
@@ -27,17 +26,7 @@ input {
     border: none;
     border-radius: 5px;
     opacity: 1;
-
 }
-.loupe{
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-}
-}
-
 
 header {
     display: flex;

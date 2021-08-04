@@ -27,25 +27,13 @@ input {
   font-size: 18px;
 }
 
-.main-research {
-  position: relative;
-}
-
-.main-research .search-bar-main {
+.search-bar-main {
   width: 1240px;
   height: 69px;
   background-color: #E7E7E7;
   border: none;
   border-radius: 5px;
   opacity: 1;
-}
-
-.main-research .loupe {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  right: 10px;
-  top: 20px;
 }
 
 header {
