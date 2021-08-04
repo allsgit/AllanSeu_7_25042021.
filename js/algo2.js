@@ -10,7 +10,7 @@ fetch("/js/recipes-list.json")
     filterByUstensils(data.recipes);
     tagAdd(data.recipes);
     openMenu();
-    MainAlgoTwo(data.recipes)
+    MainAlgoTwo(data.recipes);
   });
 
 /// CONSTANTES GLOBALES ///
@@ -136,78 +136,59 @@ function ustensilListCreator(recipes) {
 
 //**************MAIN SEARCH **************//
 
-
-
-function MainAlgoTwo (recipes) {
-  userInput.addEventListener ('keyup', () => {
-    const resultName = [];
-    const resultDescript = [];
-    const resultIngredients = [];
+function MainAlgoTwo(recipes) {
+  userInput.addEventListener("keyup", () => {
     const resultRecipes = [];
-    const userInputToLower = userInput.value.toLowerCase ();
+    const userInputToLower = userInput.value.toLowerCase();
 
     if (userInputToLower.length < 1) {
-      recipesCardCreator (recipes);
-    } 
-    if (userInputToLower === 'vide') { // VIDE à remplacer par le resultat de recherche ’ = 0
-      mainContent.innerText =
-        'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.';
+      mainContent.innerText = " ";
+      recipesCardCreator(recipes);
     } else if (userInputToLower.length > 1) {
       for (let i = 0; i < recipes.length; i++) {
         for (let j = 0; j < recipes[i].ingredients.length; j++) {
           if (
             recipes[i].ingredients[j].ingredient
-              .toLowerCase ()
-              .includes (userInputToLower)
+              .toLowerCase()
+              .includes(userInputToLower)
           ) {
-            resultRecipes.push(recipes[i])
+            resultRecipes.push(recipes[i]);
           }
-          if (recipes[i].name.toLowerCase ().includes (userInputToLower)) {
-            resultRecipes.push(recipes[i])
+          if (recipes[i].name.toLowerCase().includes(userInputToLower)) {
+            resultRecipes.push(recipes[i]);
           }
-          if (
-            recipes[i].description.toLowerCase ().includes (userInputToLower)
-          ) {
-            resultRecipes.push(recipes[i])
+          if (recipes[i].description.toLowerCase().includes(userInputToLower)) {
+            resultRecipes.push(recipes[i]);
           }
         }
       }
-      mainContent.innerText = ' ';
-      const setResultRecipes = new Set (resultRecipes);
-      console.log(new Set (resultRecipes));
-      
-      recipesCardCreator(
-        searchRecipesWithTag(
-          [...setResultRecipes],
-          userInputToLower,
-          tagIngredients,
-          tagUstensils,
-          tagAppareils
-        )
-      );
-      filterByIngredient([...setResultRecipes]);
-      filterByAppareil([...setResultRecipes]);
-      filterByUstensils([...setResultRecipes]);
-      tagAdd(recipes);
+
+      if (resultRecipes.length === 0) {
+        mainContent.innerText =
+          "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
+        console.log(mainContent);
+      } else {
+        mainContent.innerText = " ";
+        const setResultRecipes = new Set(resultRecipes);
+        console.log(new Set(resultRecipes));
+
+        recipesCardCreator(
+          searchRecipesWithTag(
+            [...setResultRecipes],
+            userInputToLower,
+            tagIngredients,
+            tagUstensils,
+            tagAppareils
+          )
+        );
+        filterByIngredient([...setResultRecipes]);
+        filterByAppareil([...setResultRecipes]);
+        filterByUstensils([...setResultRecipes]);
+        tagAdd(recipes);
+      }
     }
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function filterBySearch(recipe, keyword) {
   return (
