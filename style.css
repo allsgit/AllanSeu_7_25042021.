@@ -466,8 +466,6 @@ main {
   display: grid;
   -ms-grid-columns: 186px 186px;
       grid-template-columns: 186px 186px;
-  -ms-grid-rows: 89px 118px;
-      grid-template-rows: 89px 118px;
   margin: 0 20px;
 }
 
@@ -533,7 +531,6 @@ main {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
-  overflow: hidden;
 }
 
 .recette .recette-description .time-to {
