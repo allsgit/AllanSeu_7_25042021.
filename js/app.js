@@ -287,7 +287,6 @@ function filterByIngredient(recipes) {
           isMenuOpen = true;
           ingredientListCreator(result);
           tagAdd(recipes);
-          ingredientResize.style.width = `${ingredientDiv.offsetWidth - 24}px`;
 
         }
       }
@@ -483,7 +482,7 @@ function openMenu() {
           next.style.display = "inline-flex";
           isMenuOpen = true;
           e.target.style.transform = "rotate(180deg)";
-          ingredientResize.style.width = `${ingredientDiv.offsetWidth}px`;
+        
          
          
        
