@@ -391,7 +391,7 @@ header .brand-name {
 }
 
 .tag-add .tagDiv {
-  width: 107;
+  width: 107px;
   height: 37px;
   margin-left: 10px;
   display: -webkit-box;
@@ -466,8 +466,6 @@ main {
   display: grid;
   -ms-grid-columns: 186px 186px;
       grid-template-columns: 186px 186px;
-  -ms-grid-rows: px 118px;
-      grid-template-rows: px 118px;
   margin: 0 20px;
 }
 
@@ -533,7 +531,6 @@ main {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
-  overflow: hidden;
 }
 
 .recette .recette-description .time-to {
