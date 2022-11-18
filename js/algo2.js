@@ -94,7 +94,7 @@ function recipesCardCreator(recipes) {
     recipesTitlte.innerText = `${recipeItem.name}`;
     recipesProcess.innerText = `${recipeItem.description}`;
     recipesTime.innerText = `${recipeItem.time}min`;
-    timerIcon.src = "../images/timer.png";
+    timerIcon.src = "/images/timer.png";
   });
 }
 //**************CRÉER LISTE RECHERCHE AVANCÉ **************//
