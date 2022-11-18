@@ -11,6 +11,10 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+
+    @media screen and (max-width: 640px) {
+        width: 100vw;
+    }
 }
 
 input {
@@ -19,24 +23,35 @@ input {
     font-size: 18px;
 }
 
-.main-research{
+.main-research {
     position: relative;
-.search-bar-main {
-    width: 1240px;
-    height: 69px;
-    background-color: #E7E7E7;
-    border: none;
-    border-radius: 5px;
-    opacity: 1;
 
-}
-.loupe{
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-}
+    @media screen and (max-width: 640px) {
+        width: 100%;
+    }
+
+    input {
+        @media screen and (max-width: 640px) {
+            width: 100%;
+        }
+    }
+
+    .search-bar-main {
+        width: 1240px;
+        height: 69px;
+        background-color: #E7E7E7;
+        border: none;
+        border-radius: 5px;
+        opacity: 1;
+    }
+
+    .loupe {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
 }
 
 header {
@@ -49,6 +64,10 @@ header {
         margin: 0 auto;
         margin-bottom: 17px;
         color: #D04F4F;
+    }
+
+    @media screen and (max-width: 640px) {
+        width: 100%;
     }
 }
 
@@ -148,6 +167,7 @@ header {
     color: white;
     align-items: center;
     cursor: pointer;
+
     .arrow {
         position: absolute;
         margin: 0 20px 0 0;
@@ -215,6 +235,7 @@ header {
     justify-content: center;
     color: white;
     align-items: center;
+
     .arrow {
         position: absolute;
         margin: 0 20px 0 0;
@@ -239,7 +260,7 @@ header {
             text-decoration: none;
             list-style-type: none;
             margin: 10px;
-            width :138px
+            width: 138px;
         }
     }
 
@@ -329,6 +350,10 @@ main {
     height: 100%;
     margin: 0px auto;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 640px) {
+        width: 100%;
+    }
 }
 
 .recette {
@@ -395,7 +420,6 @@ main {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 6;
-   
         }
 
         .time-to {

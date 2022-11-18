@@ -1,6 +1,5 @@
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "lato";
@@ -8,17 +7,15 @@ body {
 
 .main-container {
   width: 1440px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
+}
+@media screen and (max-width: 640px) {
+  .main-container {
+    width: 100vw;
+  }
 }
 
 input {
@@ -30,7 +27,16 @@ input {
 .main-research {
   position: relative;
 }
-
+@media screen and (max-width: 640px) {
+  .main-research {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main-research input {
+    width: 100%;
+  }
+}
 .main-research .search-bar-main {
   width: 1240px;
   height: 69px;
@@ -39,7 +45,6 @@ input {
   border-radius: 5px;
   opacity: 1;
 }
-
 .main-research .loupe {
   width: 32px;
   height: 32px;
@@ -49,39 +54,28 @@ input {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
 }
-
 header .brand-name {
   margin: 0 auto;
   margin-bottom: 17px;
   color: #D04F4F;
 }
-
-.logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 42px auto 0;
+@media screen and (max-width: 640px) {
+  header {
+    width: 100%;
+  }
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 42px auto 0;
+}
 .logo img {
   width: 50px;
   height: 48px;
@@ -90,39 +84,29 @@ header .brand-name {
 .search-by-ingredient {
   position: relative;
   background-color: #3282F7;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 170px;
   height: 69px;
   border-radius: 5px;
   margin: 15px 40px 0 0;
   color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .search-by-ingredient .ingredient-list-div {
   display: none;
   background: #3282F7;
   width: 667px;
   height: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   cursor: pointer;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .search-by-ingredient .ingredient-list {
   font-size: 18px;
   display: inline-block;
   width: 191px;
   margin-left: 0;
 }
-
 .search-by-ingredient .advanced-input-search-ingredient {
   width: 100%;
   height: 100%;
@@ -131,35 +115,22 @@ header .brand-name {
   border: none;
   border-radius: 5px;
 }
-
 .search-by-ingredient input {
   color: white;
 }
-
-.search-by-ingredient ::-webkit-input-placeholder {
+.search-by-ingredient ::-moz-placeholder {
   color: white;
 }
-
 .search-by-ingredient :-ms-input-placeholder {
   color: white;
 }
-
-.search-by-ingredient ::-ms-input-placeholder {
-  color: white;
-}
-
 .search-by-ingredient ::placeholder {
   color: white;
 }
-
 .search-by-ingredient .searchin-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .search-by-ingredient .ingredient {
   margin: 0 0 0 20px;
   position: absolute;
@@ -167,111 +138,77 @@ header .brand-name {
   right: 47px;
   top: 25px;
 }
-
 .search-by-ingredient .arrow {
   position: absolute;
   margin: 0 20px 0 0;
   right: 0;
   top: 30px;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-
 .search-by-ingredient p {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .search-by-appareil {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #68D9A4;
   width: 170px;
   height: 69px;
   border-radius: 5px;
   margin: 15px 20px 0 0;
   color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
 }
-
 .search-by-appareil .arrow {
   position: absolute;
   margin: 0 20px 0 0;
   right: 0;
   top: 30px;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-
 .search-by-appareil .appareil-list-div {
   display: none;
   position: absolute;
   left: -10px;
   top: 70px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #68D9A4;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   width: 190px;
 }
-
 .search-by-appareil .appareil-list-div li {
   text-decoration: none;
   list-style-type: none;
 }
-
 .search-by-appareil .advanced-input-search-appareils {
   width: 100%;
   height: 100%;
-  background-color: #68d9a4;
+  background-color: rgb(104, 217, 164);
   color: white;
   border: none;
   border-radius: 5px;
 }
-
 .search-by-appareil input {
   color: white;
 }
-
-.search-by-appareil ::-webkit-input-placeholder {
+.search-by-appareil ::-moz-placeholder {
   color: white;
 }
-
 .search-by-appareil :-ms-input-placeholder {
   color: white;
 }
-
-.search-by-appareil ::-ms-input-placeholder {
-  color: white;
-}
-
 .search-by-appareil ::placeholder {
   color: white;
 }
-
 .search-by-appareil .ingredient {
   margin: 0 0 0 20px;
 }
-
 .search-by-appareil img {
   position: absolute;
   top: 29px;
@@ -280,36 +217,25 @@ header .brand-name {
 
 .search-by-ustensil {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   background-color: #ED6454;
   width: 170px;
   height: 69px;
   border-radius: 5px;
   margin: 15px 20px 0 0;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .search-by-ustensil .arrow {
   position: absolute;
   margin: 0 20px 0 0;
   right: 0;
   top: 30px;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-
 .search-by-ustensil .ustensil-list-div {
   position: absolute;
   margin: 10px;
@@ -318,134 +244,102 @@ header .brand-name {
   display: none;
   width: 655px;
   background-color: red;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0;
   cursor: pointer;
 }
-
 .search-by-ustensil .ustensil-list-div li {
   text-decoration: none;
   list-style-type: none;
   margin: 10px;
   width: 138px;
 }
-
 .search-by-ustensil .advanced-input-search-ustensils {
   width: 100%;
   height: 100%;
-  background-color: #ed6454;
+  background-color: rgb(237, 100, 84);
   color: white;
   border: none;
   border-radius: 5px;
 }
-
 .search-by-ustensil input {
   color: white;
 }
-
-.search-by-ustensil ::-webkit-input-placeholder {
+.search-by-ustensil ::-moz-placeholder {
   color: white;
 }
-
 .search-by-ustensil :-ms-input-placeholder {
   color: white;
 }
-
-.search-by-ustensil ::-ms-input-placeholder {
-  color: white;
-}
-
 .search-by-ustensil ::placeholder {
   color: white;
 }
-
 .search-by-ustensil .ingredient {
   margin: 0 20px;
 }
-
 .search-by-ustensil img {
   position: absolute;
   right: 17px;
 }
 
 .search-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 25px;
   font-family: "lato";
 }
 
 .tag-add {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 100%;
   height: 59px;
   border-radius: 5px;
   margin-top: 35px;
 }
-
 .tag-add .tagDiv {
-  width: 107px;
+  width: 107;
   height: 37px;
   margin-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 5px;
   font-size: 14px;
   color: white;
 }
-
 .tag-add .tagDiv:hover {
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0.9;
 }
-
 .tag-add .tagDiv img {
   width: 20px;
   height: 20px;
 }
-
 .tag-add .tagDiv .item-tag {
   margin: 5px;
 }
-
 .tag-add p {
   font-family: "lato";
   margin: 0 0 0 20px;
   color: white;
   font-size: 14px;
 }
-
 .tag-add img {
   margin: 0px 7px 0 0;
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 1344px;
   height: 100%;
   margin: 0px auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 640px) {
+  main {
+    width: 100%;
+  }
 }
 
 .recette {
@@ -454,49 +348,32 @@ main {
   background-color: #E7E7E7;
   margin: 30px;
 }
-
 .recette .recette-img {
   width: 100%;
   background-color: #C7BEBE;
   height: 178px;
 }
-
 .recette .recette-description {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 186px 186px;
-      grid-template-columns: 186px 186px;
+  grid-template-columns: 186px 186px;
   margin: 0 20px;
 }
-
 .recette .recette-description .recette-title {
   font-size: 18px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
+  flex-wrap: wrap;
+  grid-row-start: 1;
   grid-row-end: 2;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
+  grid-column-start: 1;
   grid-column-end: 2;
   overflow: hidden;
   margin: 30px 0 0 0;
 }
-
 .recette .recette-description .ingredient-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-right: 10px;
-  -ms-grid-column: 1;
-      grid-column-start: 1;
+  grid-column-start: 1;
   grid-column-end: 1;
   font-size: 12px;
   text-decoration: none;
@@ -504,26 +381,19 @@ main {
   padding: 0;
   margin-top: 0;
 }
-
 .recette .recette-description .ingredient-list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-weight: 700;
 }
-
 .recette .recette-description .ingredient-list .quantity {
   margin: 0 0 0 4px;
   font-weight: 400;
 }
-
 .recette .recette-description .process {
   font-size: 12px;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
+  grid-column-start: 2;
   grid-column-end: 3;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
+  grid-row-start: 2;
   grid-row-end: 2;
   margin: 0 0 26px 0;
   padding-right: 25px;
@@ -532,44 +402,28 @@ main {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
 }
-
 .recette .recette-description .time-to {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
+  align-items: center;
+  grid-column-start: 2;
   grid-column-end: 3;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
+  grid-row-start: 1;
   grid-row-end: 2;
   font-size: 18px;
   font-weight: bold;
   margin: 34px 75px;
 }
-
 .recette .recette-description .time-to img {
   margin-right: 5px;
 }
-
 .recette .recette-description .timer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
+  grid-column-start: 2;
   grid-column-end: 3;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
+  grid-row-start: 1;
   grid-row-end: 2;
   font-size: 18px;
   font-weight: bold;
   margin: 36px 46px;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
