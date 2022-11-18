@@ -94,7 +94,7 @@ function recipesCardCreator(recipes) {
     recipesTitlte.innerText = `${recipeItem.name}`;
     recipesProcess.innerText = `${recipeItem.description}`;
     recipesTime.innerText = `${recipeItem.time}min`;
-    timerIcon.src = "./images/timer.png";
+    timerIcon.src = "../images/timer.png";
   });
 }
 //**************CRÉER LISTE RECHERCHE AVANCÉ **************//
@@ -387,7 +387,7 @@ function tagAdd(recipes) {
         tagDiv = document.createElement("div");
         tagDiv.classList = "tagDiv";
         let closeCross = document.createElement("img");
-        closeCross.src = "./images/delete-item.png";
+        closeCross.src = "../images/delete-item.png";
         closeCross.className = "close-cross";
         const filterText = document.createElement("p");
         filterText.className = "item-tag";
