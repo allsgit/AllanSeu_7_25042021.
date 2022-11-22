@@ -1,4 +1,4 @@
-fetch('/js/recipes-list.json')
+fetch('js/recipes-list.json')
   .then((response) => response.json())
   .then((data) => {
     recipesCardCreator(data.recipes);
