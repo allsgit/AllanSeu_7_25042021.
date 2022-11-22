@@ -323,7 +323,7 @@ function tagAdd(recipes) {
         tagDiv = document.createElement('div');
         tagDiv.classList = 'tagDiv';
         let closeCross = document.createElement('img');
-        closeCross.src = '/images/delete-item.png';
+        closeCross.src = 'images/delete-item.png';
         closeCross.className = 'close-cross';
         const filterText = document.createElement('p');
         filterText.className = 'item-tag';
