@@ -155,7 +155,7 @@ function MainAlgoTwo(recipes) {
 
       if (resultRecipes.length === 0) {
         mainContent.innerText = 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.';
-        console.log(mainContent);
+  
       } else {
         mainContent.innerText = ' ';
         const setResultRecipes = new Set(resultRecipes);
